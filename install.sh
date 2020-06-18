@@ -17,9 +17,15 @@ do
     # echo $dir
     if [ ! -d $dir ];then
         mkdir -p $dir
-        # echo "${dir}文件夹已经存在"
+        echo "${dir} 文件夹创建成功"
     else
-        echo "${dir}文件夹已经存在"
+        echo "${dir} 文件夹已经存在"
     fi
 done
+
+###
+#
+#  安装docker
+#
+###
 

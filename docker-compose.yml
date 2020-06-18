@@ -12,6 +12,7 @@ services:
             - /data:/home/data
             - /var/log/bs:/var/log/bs
             - /var/www:/var/www
+            - /dbbackup:/dbbackup
         privileged: true
         restart: "always"
         cap_add:

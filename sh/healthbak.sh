@@ -4,17 +4,17 @@ export LANG=en_US.UTF-8
 source /usr/local/sh/binlogbak.sh
 
 BIN_DIR="/usr/bin"
-BakDir=/dbbackup/daishu_dump/health
-AddBakDir=/dbbackup/daishu_dump/daily
-LogFile=/dbbackup/daishu_dump/health/health_bak.log
+BakDir=/dbbackup/mysql/health
+AddBakDir=/dbbackup/mysql/daily
+LogFile=/dbbackup/mysql/health/health_bak.log
 Date=`date +%Y%m%d_%H%M%S`
 Begin=`date +"%Y%m%d %H:%M:%S"`
 DB_NAME="health"
 DB_USER="root"
 DB_PASS="SUGH@xk_dsjk2019V5"
 cd $BakDir
-DumpFile="/dbbackup/daishu_dump/health/data_"$Date.sql
-GZDumpFile="/dbbackup/daishu_dump/health/data_"$Date.sql.tgz
+DumpFile="/dbbackup/mysql/health/data_"$Date.sql
+GZDumpFile="/dbbackup/mysql/health/data_"$Date.sql.tgz
 $BIN_DIR/mysqldump -u$DB_USER -p$DB_PASS $DB_NAME --flush-logs --delete-master-logs --single-transaction > $DumpFile
 tar -czPf $GZDumpFile $DumpFile
 rm $DumpFile

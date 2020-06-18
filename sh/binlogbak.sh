@@ -1,10 +1,10 @@
 #!/bin/bash
 export LANG=en_US.UTF-8
 BIN_DIR="/usr/bin"
-BakDir=/dbbackup/daishu_dump/daily
-BinDir=/var/log/mysql/logbin
-LogFile=/dbbackup/daishu_dump/daily/binlog.log
-BinFile=/var/log/mysql/logbin/logbin.index
+BakDir=/dbbackup/mysql/daily
+BinDir=/var/log/bs/mysql/logbin
+LogFile=/dbbackup/mysql/daily/binlog.log
+BinFile=/var/log/bs/mysql/logbin/logbin.index
 echo `date +"%Y%m%d %H:%M:%S"` add backup start ! >> $LogFile
 $BIN_DIR/mysqladmin -uroot -pSUGH@xk_dsjk2019V5 flush-logs
 echo "flush-logs binlog file such" >> $LogFile
