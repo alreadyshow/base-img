@@ -1,0 +1,22 @@
+version: "3"
+
+services: 
+    tj:
+        build: 
+            context: ./
+            dockerfile: Dockerfile
+        container_name: "tj"
+        network_mode: "host"
+        volumes: 
+            - /u01:/u01
+            - /data:/home/data
+            - /var/log/bs:/var/log/bs
+            - /var/www:/var/www
+        privileged: true
+        restart: "always"
+        cap_add:
+            - ALL
+        # command: 
+        #     - /usr/local/sh/init.sh
+        #     - echo 1
+
